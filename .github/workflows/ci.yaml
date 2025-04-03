@@ -9,3 +9,17 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 
 
       - run: ls
+
+      - name: 'Build Container'
+        run: |
+          docker build -t ghcr.io/cloudcamp/microbootcamp:latest .
+
+      - name: 'Login to GHCR'
+        env:
+          CR_PAT: ${{ github.token }}
+        run: |
+          echo $CR_PAT | docker login ghcr.io -u daviddager --password-stdi
+
+      - name: 'Push image to GHCR'
+        run: |
+          docker push ghcr.io/cloudcamp/microbootcamp:latest
