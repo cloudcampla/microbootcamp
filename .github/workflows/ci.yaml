@@ -22,4 +22,4 @@ jobs:
 
       - name: 'Push image to GHCR'
         run: |
-          docker push ghcr.io/cloudcamp/microbootcamp:latest
+          docker push ghcr.io/cloudcampla/microbootcamp:latest
