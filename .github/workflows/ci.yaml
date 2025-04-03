@@ -12,7 +12,7 @@ jobs:
 
       - name: 'Build Container'
         run: |
-          docker build -t ghcr.io/cloudcamp/microbootcamp:latest .
+          docker build -t ghcr.io/cloudcampla/microbootcamp:latest .
 
       - name: 'Login to GHCR'
         env:
